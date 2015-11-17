@@ -1,0 +1,42 @@
+{
+  "name": "slush-labshare",
+  "description": "Slush generator for a LabShare package",
+  "version": "v0.15.1116",
+  "contributors": "https://github.com/LabShare/slush-labshare/graphs/contributors",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/LabShare/slush-labshare.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LabShare/slush-labshare/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/LabShare/slush-labshare/blob/master/LICENSE"
+    }
+  ],
+  "main": "slushfile.js",
+  "engines": {
+    "node": ">= 0.10.26",
+    "npm": ">=1.4.3"
+  },
+  "scripts": {
+    "test": "echo \"No tests\""
+  },
+  "dependencies": {
+    "slush": ">=1.0.0",
+    "gulp": "^3.6.2",
+    "gulp-template": "^0.1.1",
+    "gulp-install": "^0.1.4",
+    "gulp-conflict": "^0.1.1",
+    "gulp-rename": "^1.2.0",
+    "underscore.string": "^2.3.3",
+    "inquirer": "^0.4.1",
+    "iniparser": "^1.0.5"
+  },
+  "keywords": [
+    "slushgenerator",
+    "labshare"
+  ]
+}

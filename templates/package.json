@@ -1,0 +1,25 @@
+{
+  "name": "__package-name__",
+  "namespace": "",
+  "main": "./src",
+  "version": "0.15.05",
+  "description": "A short description of your LabShare package",
+  "private": true,
+  "contributors": "https://github.com/LabShare/__package-name__/graphs/contributors",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LabShare/__package-name__.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LabShare/__package-name__/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "bower install --config.cwd=./src/ui",
+    "lsc": "lsc"
+  },
+  "devDependencies": {
+    "bower": "^1.6.2",
+    "ls-shell": "git+ssh://git@github.com:LabShare/shell.git"
+  }
+}
