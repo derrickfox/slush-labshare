@@ -1,0 +1,25 @@
+{
+  "name": "<%= appNameSlug %>",
+  "namespace": "",
+  "main": "./src",
+  "version": "<%= appVersion %>",
+  "description": "<%= appDescription %>",
+  "private": true,
+  "contributors": "https://github.com/LabShare/<%= appNameSlug %>/graphs/contributors",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LabShare/<%= appNameSlug %>.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LabShare/<%= appNameSlug %>/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "bower install --config.cwd=./src/ui",
+    "lsc": "lsc"
+  },
+  "devDependencies": {
+    "bower": "^1.6.2",
+    "ls-shell": "https://github.com/LabShare/shell"
+  }
+}
