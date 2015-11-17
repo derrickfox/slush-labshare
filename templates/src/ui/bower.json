@@ -1,8 +1,8 @@
 {
-  "name": "__package-name__",
-  "version": "0.0.0",
+  "name": "<%= appNameSlug %>",
+  "version": "<%= appVersion %>",
   "description": "A short description of your package",
-  "homepage": "https://github.com/LabShare/__package-name__.git",
+  "homepage": "https://github.com/LabShare/<%= appNameSlug %>.git",
   "license": "MIT",
   "private": true,
   "ignore": [

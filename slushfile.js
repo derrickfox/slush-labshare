@@ -8,50 +8,20 @@ var gulp = require('gulp'),
     _ = require('underscore.string'),
     inquirer = require('inquirer');
 
-function format(string) {
-    var username = string ? string.toLowerCase() : '';
-    return username.replace(/\s/g, '');
+function padLeft(dateValue) {
+    return (dateValue < 10) ? '0' + dateValue : dateValue;
 }
 
-var defaults = (function () {
-    var homeDir = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE,
-        workingDirName = process.cwd().split('/').pop().split('\\').pop(),
-        osUserName = homeDir && homeDir.split('/').pop() || 'root',
-        configFile = homeDir + '/.gitconfig',
-        user = {};
-    if (require('fs').existsSync(configFile)) {
-        user = require('iniparser').parseSync(configFile).user;
-    }
-    return {
-        appName: workingDirName,
-        userName: format(user.name) || osUserName,
-        authorEmail: user.email || ''
-    };
-})();
+var defaultAppName = process.cwd().split('/').pop().split('\\').pop();
 
 gulp.task('default', function (done) {
     var prompts = [{
         name: 'appName',
         message: 'What is the name of your project?',
-        default: defaults.appName
+        default: defaultAppName
     }, {
         name: 'appDescription',
         message: 'What is the description?'
-    }, {
-        name: 'appVersion',
-        message: 'What is the version of your project?',
-        default: '0.1.0'
-    }, {
-        name: 'authorName',
-        message: 'What is the author name?'
-    }, {
-        name: 'authorEmail',
-        message: 'What is the author email?',
-        default: defaults.authorEmail
-    }, {
-        name: 'userName',
-        message: 'What is the Github username?',
-        default: defaults.userName
     }, {
         type: 'confirm',
         name: 'moveon',
@@ -62,7 +32,15 @@ gulp.task('default', function (done) {
         if (!answers.moveon) {
             return done();
         }
+
+        var today = new Date();
+        answers.appVersion = [
+            'v0',
+            today.getFullYear().toString().slice(2),
+            padLeft(today.getMonth() + 1) + padLeft(today.getDate())
+        ].join('.');
         answers.appNameSlug = _.slugify(answers.appName);
+
         gulp.src(__dirname + '/templates/**')
             .pipe(template(answers))
             .pipe(rename(function (file) {

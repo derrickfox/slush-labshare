@@ -1,10 +1,10 @@
-// src/ui/app.js - The main AngularJS module
+// The main AngularJS module of <%= appNameSlug %>
 define([
     'angular',
     './home/index'
 ], function (angular) {
     'use strict';
-    return angular.module('labshare.__package-name__', [
-        'labshare.__package-name__.home'
+    return angular.module('labshare.<%= appNameSlug %>', [
+        'labshare.<%= appNameSlug %>.home'
     ]);
 });

@@ -1,17 +1,17 @@
 {
-  "name": "__package-name__",
+  "name": "<%= appNameSlug %>",
   "namespace": "",
   "main": "./src",
-  "version": "0.15.05",
-  "description": "A short description of your LabShare package",
+  "version": "<%= appVersion %>",
+  "description": "<%= appDescription %>",
   "private": true,
-  "contributors": "https://github.com/LabShare/__package-name__/graphs/contributors",
+  "contributors": "https://github.com/LabShare/<%= appNameSlug %>/graphs/contributors",
   "repository": {
     "type": "git",
-    "url": "https://github.com/LabShare/__package-name__.git"
+    "url": "https://github.com/LabShare/<%= appNameSlug %>.git"
   },
   "bugs": {
-    "url": "https://github.com/LabShare/__package-name__/issues"
+    "url": "https://github.com/LabShare/<%= appNameSlug %>/issues"
   },
   "license": "MIT",
   "scripts": {
@@ -20,6 +20,6 @@
   },
   "devDependencies": {
     "bower": "^1.6.2",
-    "ls-shell": "git+ssh://git@github.com:LabShare/shell.git"
+    "ls-shell": "https://github.com/LabShare/shell"
   }
 }

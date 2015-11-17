@@ -1,3 +1,3 @@
 module.exports = {
-    // Export your public libraries here
+    // Export <%= appNameSlug %>'s public Node module libraries here
 };

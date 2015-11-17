@@ -1,18 +1,18 @@
-// src/ui/demoModule/module.js - Main file where module defined, routes added, menu items added
+// Main file where module is defined, routes are added, and menu items are added
 define([
     'angular',
     'angular-ui-router'
 ], function(angular) {
-    return angular.module('labshare.__package-name__.home',['ui.router']).config(['$stateProvider', function ($stateProvider) {
+    return angular.module('labshare.<%= appNameSlug %>.home',['ui.router']).config(['$stateProvider', function ($stateProvider) {
         $stateProvider
-            .state('labshare-__package-name__-home', {
+            .state('labshare-<%= appNameSlug %>-home', {
                 data: {
                     rolesRequired: ["user", "staff", "admin"]
                 },
-                url: '/__package-name__/home',
-                templateUrl: 'packages/__package-name__/ui/home/index.html',
-                controller: 'labshare.__package-name__.HomeCtrl',
-                title: 'Home - __package-name__'
+                url: '/<%= appNameSlug %>/home',
+                templateUrl: 'packages/<%= appNameSlug %>/ui/home/index.html',
+                controller: 'labshare.<%= appNameSlug %>.HomeCtrl',
+                title: 'Home - <%= appNameSlug %>'
             });
         }])
 });
