@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     inquirer = require('inquirer');
 
 function padLeft(dateValue) {
-    return (dateValue < 10) ? '0' + dateValue : dateValue;
+    return (dateValue < 10) ? '0' + dateValue : dateValue.toString();
 }
 
 var defaultAppName = process.cwd().split('/').pop().split('\\').pop();
