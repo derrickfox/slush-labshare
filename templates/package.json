@@ -1,7 +1,7 @@
 {
   "name": "<%= appNameSlug %>",
   "namespace": "",
-  "main": "./src",
+  "main": "./",
   "version": "<%= appVersion %>",
   "description": "<%= appDescription %>",
   "private": true,
@@ -15,11 +15,13 @@
   },
   "license": "MIT",
   "scripts": {
-    "postinstall": "bower install --config.cwd=./src/ui",
+    "postinstall": "bower install --config.cwd=./ui",
     "lsc": "lsc"
   },
-  "devDependencies": {
-    "bower": "^1.6.2",
+  "dependencies": {
     "ls-shell": "https://github.com/LabShare/shell"
+  },
+  "devDependencies": {
+    "bower": "^1.6.2"
   }
 }
