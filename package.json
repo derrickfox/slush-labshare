@@ -1,7 +1,7 @@
 {
   "name": "slush-labshare",
   "description": "Slush generator for a LabShare package",
-  "version": "v16.1.29",
+  "version": "v16.2.1",
   "contributors": "https://github.com/LabShare/slush-labshare/graphs/contributors",
   "repository": {
     "type": "git",
